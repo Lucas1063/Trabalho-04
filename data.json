@@ -1,0 +1,12 @@
+[
+  { "id": 1, "titulo": "Bohemian Rhapsody", "artista": "Queen", "genero": "Rock", "duracao": "5:55" },
+  { "id": 2, "titulo": "Blinding Lights", "artista": "The Weeknd", "genero": "Pop", "duracao": "3:20" },
+  { "id": 3, "titulo": "Stairway to Heaven", "artista": "Led Zeppelin", "genero": "Rock", "duracao": "8:02" },
+  { "id": 4, "titulo": "Shape of You", "artista": "Ed Sheeran", "genero": "Pop", "duracao": "3:53" },
+  { "id": 5, "titulo": "Smells Like Teen Spirit", "artista": "Nirvana", "genero": "Grunge", "duracao": "5:01" },
+  { "id": 6, "titulo": "Billie Jean", "artista": "Michael Jackson", "genero": "Pop", "duracao": "4:54" },
+  { "id": 7, "titulo": "Hotel California", "artista": "Eagles", "genero": "Classic Rock", "duracao": "6:30" },
+  { "id": 8, "titulo": "Rolling in the Deep", "artista": "Adele", "genero": "Soul", "duracao": "3:48" },
+  { "id": 9, "titulo": "Wonderwall", "artista": "Oasis", "genero": "Britpop", "duracao": "4:18" },
+  { "id": 10, "titulo": "As It Was", "artista": "Harry Styles", "genero": "Pop", "duracao": "2:47" }
+]
