@@ -1,0 +1,29 @@
+name: Pipeline CI - Unify API
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout do Repositório
+      uses: actions/checkout@v3
+
+    - name: Configurar o ambiente Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Instalar Dependências
+      run: npm install
+
+
+    - name: Executar Testes Unitários
+      run: npm test
+
+  
+    - name: Gerar Relatório de Cobertura de Código
+      run: npx jest --coverage
