@@ -54,7 +54,7 @@ Trabalho-04/
 ├── data.json                  # Banco de dados fictício (Catálogo do Unify com 10 registros)
 ├── server.js                  # Inicializador do servidor web (Porta 3000)
 ├── package.json               # Gerenciador de dependências e scripts do Node.js
-└── README.md                  # Documentação completa do projeto 
+└── README.md                  # Documentação completa do projeto ´´´
 
 ---
 
