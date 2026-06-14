@@ -1,39 +1,38 @@
-🎵 Unify - API de Streaming de Música
-Este repositório contém o projeto prático e a infraestrutura automatizada do Unify, uma API RESTful de streaming de música desenvolvida como avaliação conclusiva para a disciplina de Cloud Computing do curso de Bacharelado em Sistemas de Informação do Centro Universitário para o Desenvolvimento do Alto Vale do Itajaí (UNIDAVI).
+# 🎵 Unify - API de Streaming de Música
 
-O objetivo deste projeto é demonstrar a implementação de um fluxo DevOps completo, integrando desenvolvimento de software, testes automatizados, Integração Contínua (CI), Infraestrutura como Código (IaC) e automação de deploy em ambiente de nuvem (Amazon Web Services - AWS).
+Este repositório contém o projeto prático e a infraestrutura automatizada do **Unify**, uma API RESTful de streaming de música desenvolvida como avaliação conclusiva para a disciplina de **Cloud Computing** do curso de Bacharelado em Sistemas de Informação do **Centro Universitário para o Desenvolvimento do Alto Vale do Itajaí (UNIDAVI)**.
 
-🚀 Visão Geral do Fluxo DevOps
+O objetivo deste projeto é demonstrar a implementação de um fluxo **DevOps completo**, integrando desenvolvimento de software, testes automatizados, Integração Contínua (CI), Infraestrutura como Código (IaC) e automação de deploy em ambiente de nuvem (**Amazon Web Services - AWS**).
+
+---
+
+## 🚀 Visão Geral do Fluxo DevOps
+
 O projeto está estruturado em 4 etapas sequenciais e integradas:
 
-Desenvolvimento & Testes (Etapa 1): API REST construída em Node.js (Express) com banco de dados simulado (data.json) contendo um catálogo de 10 músicas. Garantia de qualidade por meio de testes unitários com Jest e Supertest.
+1. **Desenvolvimento & Testes (Etapa 1):** API REST construída em Node.js (Express) com banco de dados simulado (`data.json`) contendo um catálogo de 10 músicas. Garantia de qualidade por meio de testes unitários com Jest e Supertest.
+2. **Integração Contínua (Etapa 2):** Automação de testes a cada *push* utilizando o **GitHub Actions**, incluindo a geração automática de relatórios de cobertura de código (*code coverage*).
+3. **Infraestrutura como Código (Etapa 3):** Provisionamento declarativo, seguro e idêntico de uma infraestrutura de rede e computação na nuvem AWS utilizando o **Terraform**.
+4. **Deploy Automatizado (Etapa 4):** Gerenciamento de configuração e implantação automatizada na instância EC2 através de playbooks do **Ansible**, com resiliência garantida pelo gerenciador de processos **PM2**.
 
-Integração Contínua (Etapa 2): Automação de testes a cada push utilizando o GitHub Actions, incluindo a geração automática de relatórios de cobertura de código (code coverage).
+---
 
-Infraestrutura como Código (Etapa 3): Provisionamento declarativo, seguro e idêntico de uma infraestrutura de rede e computação na nuvem AWS utilizando o Terraform.
+## 🛠️ Tecnologias e Ferramentas Utilizadas
 
-Deploy Automatizado (Etapa 4): Gerenciamento de configuração e implantação automatizada na instância EC2 através de playbooks do Ansible, com resiliência garantida pelo gerenciador de processos PM2.
+* **Runtime:** Node.js (v18+)
+* **Framework Web:** Express.js
+* **Framework de Testes:** Jest & Supertest
+* **Esteira de CI/CD:** GitHub Actions
+* **Ferramenta de IaC:** Terraform (v1.5+)
+* **Automação de Configuração:** Ansible (v2.10+)
+* **Gerenciador de Processos:** PM2 (Process Manager 2)
+* **Provedor de Nuvem:** Amazon Web Services (AWS)
+* **Sistema Operacional Alvo:** Ubuntu Server 22.04 LTS
 
-🛠️ Tecnologias e Ferramentas Utilizadas
-Runtime: Node.js (v18+)
+---
 
-Framework Web: Express.js
+## 📂 Estrutura de Diretórios Recomendada
 
-Framework de Testes: Jest & Supertest
-
-Esteira de CI/CD: GitHub Actions
-
-Ferramenta de IaC: Terraform (v1.5+)
-
-Automação de Configuração: Ansible (v2.10+)
-
-Gerenciador de Processos: PM2 (Process Manager 2)
-
-Provedor de Nuvem: Amazon Web Services (AWS)
-
-Sistema Operacional Alvo: Ubuntu Server 22.04 LTS
-
-📂 Estrutura de Diretórios Recomendada
 O repositório está organizado de forma a separar claramente a aplicação, a esteira de CI, os scripts de infraestrutura e os arquivos de provisionamento de software:
 
 ```text
