@@ -54,7 +54,8 @@ api-unify-streaming/
 ├── data.json                  # Banco de dados fictício (Catálogo do Unify com 10 registros)
 ├── server.js                  # Inicializador do servidor web (Porta 3000)
 ├── package.json               # Gerenciador de dependências e scripts do Node.js
-└── README.md                  # Documentação completa do projeto
+└── README.md                  # Documentação completa do projeto ```
+
 📦 Etapa 1: Execução Local & Testes Unitários
 Pré-requisitos
 Antes de iniciar, certifique-se de ter instalado em sua máquina local:
