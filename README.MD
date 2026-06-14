@@ -67,16 +67,16 @@ Gerenciador de pacotes NPM (instalado nativamente junto com o Node)
 1. Instalação de Dependências
 Clone este repositório para sua máquina local, acesse o diretório raiz e instale as bibliotecas necessárias:
 
-´´´
+
 git clone https://github.com/Lucas1063/Trabalho-04.git
 cd Trabalho-04
 npm install
-```
+
 2. Executando a API Localmente
 Para iniciar o servidor HTTP localmente na porta 3000, utilize o comando:
-´´´
+
 node server.js
-```
+
 Você verá a confirmação no terminal: Servidor do Unify rodando na porta 3000...
 
 3. Rotas Disponíveis para Testes
@@ -96,9 +96,9 @@ Retorno esperado: Código HTTP 200 retornando os detalhes da música com o respe
 
 4. Executando a Suíte de Testes Unitários
 Os testes foram projetados utilizando o Jest e Supertest para simular requisições HTTP sem travar as portas de rede. Para rodar a verificação de qualidade, execute:
-´´´
+
 npm test
-```
+
 A suíte validará quatro cenários cruciais:
 
 Retorno de sucesso (HTTP 200) na rota de listagem.
