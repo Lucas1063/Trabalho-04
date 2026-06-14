@@ -36,8 +36,8 @@ O projeto está estruturado em 4 etapas sequenciais e integradas:
 
 O repositório está organizado de forma a separar claramente a aplicação, a esteira de CI, os scripts de infraestrutura e os arquivos de provisionamento de software:
 
-```text
-api-unify-streaming/
+text
+Trabalho-04/
 ├── .github/
 │   └── workflows/
 │       └── ci.yml             # Pipeline de Integração Contínua (GitHub Actions)
@@ -54,7 +54,9 @@ api-unify-streaming/
 ├── data.json                  # Banco de dados fictício (Catálogo do Unify com 10 registros)
 ├── server.js                  # Inicializador do servidor web (Porta 3000)
 ├── package.json               # Gerenciador de dependências e scripts do Node.js
-└── README.md                  # Documentação completa do projeto ´´´
+└── README.md                  # Documentação completa do projeto 
+
+---
 
 📦 Etapa 1: Execução Local & Testes Unitários
 Pré-requisitos
@@ -68,7 +70,7 @@ Gerenciador de pacotes NPM (instalado nativamente junto com o Node)
 Clone este repositório para sua máquina local, acesse o diretório raiz e instale as bibliotecas necessárias:
 
 Bash
-git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
+git clone https://github.com/Lucas1063/Trabalho-04.git
 cd api-unify-streaming
 npm install
 2. Executando a API Localmente
