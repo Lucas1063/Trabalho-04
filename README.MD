@@ -36,7 +36,6 @@ O projeto está estruturado em 4 etapas sequenciais e integradas:
 
 O repositório está organizado de forma a separar claramente a aplicação, a esteira de CI, os scripts de infraestrutura e os arquivos de provisionamento de software:
 
-text
 Trabalho-04/
 ├── .github/
 │   └── workflows/
@@ -54,7 +53,7 @@ Trabalho-04/
 ├── data.json                  # Banco de dados fictício (Catálogo do Unify com 10 registros)
 ├── server.js                  # Inicializador do servidor web (Porta 3000)
 ├── package.json               # Gerenciador de dependências e scripts do Node.js
-└── README.md                  # Documentação completa do projeto ´´´
+└── README.md                  # Documentação completa do projeto
 
 ---
 
