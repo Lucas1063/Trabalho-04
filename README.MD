@@ -68,6 +68,7 @@ Gerenciador de pacotes NPM (instalado nativamente junto com o Node)
 Clone este repositório para sua máquina local, acesse o diretório raiz e instale as bibliotecas necessárias:
 
 
+```bash
 git clone https://github.com/Lucas1063/Trabalho-04.git
 cd Trabalho-04
 npm install
@@ -96,7 +97,7 @@ Retorno esperado: Código HTTP 200 retornando os detalhes da música com o respe
 
 4. Executando a Suíte de Testes Unitários
 Os testes foram projetados utilizando o Jest e Supertest para simular requisições HTTP sem travar as portas de rede. Para rodar a verificação de qualidade, execute:
-
+```bash
 npm test
 
 A suíte validará quatro cenários cruciais:
