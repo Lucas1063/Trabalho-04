@@ -54,6 +54,7 @@ Trabalho-04/
 ├── server.js                  # Inicializador do servidor web (Porta 3000)
 ├── package.json               # Gerenciador de dependências e scripts do Node.js
 └── README.md                  # Documentação completa do projeto
+
 📦 Etapa 1: Execução Local & Testes Unitários
 Pré-requisitos
 Antes de iniciar, certifique-se de ter instalado em sua máquina local:
@@ -65,19 +66,18 @@ Gerenciador de pacotes NPM (instalado nativamente junto com o Node)
 1. Instalação de Dependências
 Clone este repositório para sua máquina local, acesse o diretório raiz e instale as bibliotecas necessárias:
 
-Bash
 git clone [https://github.com/Lucas1063/Trabalho-04.git](https://github.com/Lucas1063/Trabalho-04.git)
 cd Trabalho-04
 npm install
+
 2. Executando a API Localmente
 Para iniciar o servidor HTTP localmente na porta 3000, utilize o comando:
 
-Bash
 node server.js
-Você verá a confirmação no terminal:
 
-Plaintext
+Você verá a confirmação no terminal:
 Servidor do Unify rodando na porta 3000...
+
 3. Rotas Disponíveis para Testes
 A API disponibiliza três endpoints principais que podem ser validados via navegador ou clientes HTTP (Postman/Insomnia):
 
@@ -95,8 +95,6 @@ Retorno esperado: Código HTTP 200 retornando os detalhes da música com o respe
 
 4. Executando a Suíte de Testes Unitários
 Os testes foram projetados utilizando o Jest e Supertest para simular requisições HTTP sem travar as portas de rede. Para rodar a verificação de qualidade, execute:
-
-Bash
 npm test
 A suíte validará quatro cenários cruciais:
 
