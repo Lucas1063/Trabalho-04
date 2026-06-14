@@ -1,0 +1,85 @@
+---
+- name: Provisionamento da EC2 e Deploy da API Unify
+  hosts: api_servers
+  become: yes 
+  
+  tasks:
+    - name: Destravar o DPKG (caso a ultima instalacao tenha travado)
+      shell: dpkg --configure -a
+      ignore_errors: true
+
+    - name: Remover pacotes velhos do Node.js que causam conflito
+      apt:
+        name:
+          - nodejs
+          - libnode-dev
+          - npm
+        state: absent
+        purge: yes
+        autoremove: yes
+
+    - name: Atualizar cache do APT e pacotes do sistema
+      apt:
+        update_cache: yes
+        upgrade: dist
+        cache_valid_time: 3600
+
+    - name: Instalar Git
+      apt:
+        name: git
+        state: present
+
+    - name: Adicionar repositório do Node.js 18 (NodeSource)
+      shell: curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+
+    - name: Instalar Node.js atualizado (forçando a nova versão)
+      apt:
+        name: nodejs
+        state: latest
+        update_cache: yes
+
+    - name: Instalar PM2 globalmente
+      npm:
+        name: pm2
+        global: yes
+        state: present
+
+    - name: Clonar o repositório da API do GitHub
+      git:
+        repo: 'https://github.com/Lucas1063/Trabalho-04.git'
+        dest: /home/ubuntu/api_unify
+        version: main
+        force: yes
+        update: yes
+
+    - name: Instalar dependências da API (npm install)
+      npm:
+        path: /home/ubuntu/api_unify
+        state: present
+
+    # --- ALTERAÇÕES DO PM2 COMEÇAM AQUI ---
+    - name: Verificar se a API já está rodando no PM2
+      command: pm2 describe unify-api
+      register: pm2_status
+      changed_when: false
+      ignore_errors: true
+
+    - name: Iniciar a API com PM2 (apenas se não estiver rodando)
+      command: pm2 start server.js --name "unify-api"
+      args:
+        chdir: /home/ubuntu/api_unify
+      when: pm2_status.rc != 0
+
+    - name: Reiniciar a API com PM2 (caso já estivesse rodando, para aplicar código novo)
+      command: pm2 restart unify-api
+      when: pm2_status.rc == 0
+    # --- FIM DAS ALTERAÇÕES ---
+
+    - name: Configurar PM2 para iniciar com o sistema (auto-start)
+      command: pm2 startup systemd -u ubuntu --hp /home/ubuntu
+      register: pm2_startup
+      changed_when: "'[PM2] Init System found' in pm2_startup.stdout"
+
+    - name: Salvar o estado atual do PM2
+      command: pm2 save
+      changed_when: false
