@@ -83,6 +83,7 @@ node server.js
 Você verá a confirmação no terminal: Servidor do Unify rodando na porta 3000...
 
 3. Rotas Disponíveis para Testes
+
 A API disponibiliza três endpoints principais que podem ser validados via navegador ou clientes HTTP (Postman/Insomnia):
 
 Status da API: GET http://localhost:3000/status
@@ -98,6 +99,7 @@ Busca por ID: GET http://localhost:3000/musicas/1
 Retorno esperado: Código HTTP 200 retornando os detalhes da música com o respectivo ID numérico. Caso o ID não exista (ex: /musicas/999), a API retornará o Código HTTP 404 acompanhado de uma mensagem descritiva de erro.
 
 4. Executando a Suíte de Testes Unitários
+
 Os testes foram projetados utilizando o Jest e Supertest para simular requisições HTTP sem travar as portas de rede. Para rodar a verificação de qualidade, execute:
 
 ```text
