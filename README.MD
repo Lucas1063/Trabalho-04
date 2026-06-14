@@ -54,4 +54,62 @@ Trabalho-04/
 ├── server.js                  # Inicializador do servidor web (Porta 3000)
 ├── package.json               # Gerenciador de dependências e scripts do Node.js
 └── README.md                  # Documentação completa do projeto
-´´´
+```
+
+📦 Etapa 1: Execução Local & Testes Unitários
+Pré-requisitos
+Antes de iniciar, certifique-se de ter instalado em sua máquina local:
+
+Node.js (Versão 18 LTS ou superior recomendada)
+
+Gerenciador de pacotes NPM (instalado nativamente junto com o Node)
+
+1. Instalação de Dependências
+Clone este repositório para sua máquina local, acesse o diretório raiz e instale as bibliotecas necessárias:
+
+
+```text
+git clone https://github.com/Lucas1063/Trabalho-04.git
+cd Trabalho-04
+npm install
+```
+
+
+2. Executando a API Localmente
+Para iniciar o servidor HTTP localmente na porta 3000, utilize o comando:
+```text
+node server.js
+```
+Você verá a confirmação no terminal: Servidor do Unify rodando na porta 3000...
+
+3. Rotas Disponíveis para Testes
+A API disponibiliza três endpoints principais que podem ser validados via navegador ou clientes HTTP (Postman/Insomnia):
+
+Status da API: GET http://localhost:3000/status
+
+Retorno esperado: Código HTTP 200 contendo o status operacional da aplicação e versão.
+
+Listagem do Catálogo: GET http://localhost:3000/musicas
+
+Retorno esperado: Código HTTP 200 listando o array completo com as 10 músicas extraídas do arquivo data.json.
+
+Busca por ID: GET http://localhost:3000/musicas/1
+
+Retorno esperado: Código HTTP 200 retornando os detalhes da música com o respectivo ID numérico. Caso o ID não exista (ex: /musicas/999), a API retornará o Código HTTP 404 acompanhado de uma mensagem descritiva de erro.
+
+4. Executando a Suíte de Testes Unitários
+Os testes foram projetados utilizando o Jest e Supertest para simular requisições HTTP sem travar as portas de rede. Para rodar a verificação de qualidade, execute:
+
+```text
+npm test
+```
+
+A suíte validará quatro cenários cruciais:
+
+Retorno de sucesso (HTTP 200) na rota de listagem.
+
+Integridade estrutural do JSON retornado (presença das chaves id, titulo e artista).
+
+Tratamento de exceção com retorno HTTP 404 para músicas inexistentes no catálogo.
+
+Validação autoral focada na rota /status para garantir monitoramento contínuo.
