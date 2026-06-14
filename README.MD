@@ -36,6 +36,7 @@ O projeto está estruturado em 4 etapas sequenciais e integradas:
 
 O repositório está organizado de forma a separar claramente a aplicação, a esteira de CI, os scripts de infraestrutura e os arquivos de provisionamento de software:
 
+```text
 Trabalho-04/
 ├── .github/
 │   └── workflows/
@@ -55,8 +56,6 @@ Trabalho-04/
 ├── package.json               # Gerenciador de dependências e scripts do Node.js
 └── README.md                  # Documentação completa do projeto
 
----
-
 📦 Etapa 1: Execução Local & Testes Unitários
 Pré-requisitos
 Antes de iniciar, certifique-se de ter instalado em sua máquina local:
@@ -69,8 +68,8 @@ Gerenciador de pacotes NPM (instalado nativamente junto com o Node)
 Clone este repositório para sua máquina local, acesse o diretório raiz e instale as bibliotecas necessárias:
 
 Bash
-git clone https://github.com/Lucas1063/Trabalho-04.git
-cd api-unify-streaming
+git clone [https://github.com/Lucas1063/Trabalho-04.git](https://github.com/Lucas1063/Trabalho-04.git)
+cd Trabalho-04
 npm install
 2. Executando a API Localmente
 Para iniciar o servidor HTTP localmente na porta 3000, utilize o comando:
@@ -107,7 +106,7 @@ Integridade estrutural do JSON retornado (presença das chaves id, titulo e arti
 
 Tratamento de exceção com retorno HTTP 404 para músicas inexistentes no catálogo.
 
-Validação autoral focado na rota /status para garantir monitoramento contínuo.
+Validação autoral focada na rota /status para garantir monitoramento contínuo.
 
 🤖 Etapa 2: Integração Contínua (CI)
 A automação de CI está configurada no arquivo .github/workflows/ci.yml. Sempre que um comando git push é efetuado nas ramificações principais (main ou master), o GitHub Actions aciona um runner baseado em Ubuntu Linux que executa os seguintes passos:
@@ -152,7 +151,7 @@ cd terraform
 terraform init    # Inicializa os plugins dos provedores
 terraform plan    # Exibe o plano descritivo dos recursos a serem criados
 terraform apply   # Cria efetivamente a infraestrutura na nuvem da AWS (digite 'yes')
-Ao finalizar o processo, o Terraform exibirá no terminal o output ec2_public_ip contendo o IP público gerado para a instância EC2.
+Nota: Ao finalizar o processo, o Terraform exibirá no terminal o output ec2_public_ip contendo o IP público gerado para a instância EC2.
 
 🎭 Etapa 4: Configuração & Deploy Automatizado (Ansible)
 A configuração interna do servidor e a publicação da API Unify ocorrem de forma 100% automatizada e idempotente na pasta /ansible.
@@ -168,7 +167,7 @@ Realiza o clone/pull do repositório da API diretamente no diretório de execuç
 
 Executa o npm install no servidor de produção para configurar a API.
 
-Gerencia de forma idempotente a inicialização e o reinício do processo no PM2 sob o escopo "unify-api".
+Gerencia de forma idempotente a inicialização e o reinício do processo no PM2 sob o escopo unify-api.
 
 Resiliência: Configura o acoplamento do PM2 ao gerenciador de inicialização do sistema (systemd), salvando o estado atual para que, em caso de reinicialização completa ou queda da instância EC2, a API inicie de forma autônoma sem intervenção manual humana.
 
